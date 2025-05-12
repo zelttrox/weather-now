@@ -15,6 +15,7 @@ root.render(
   <React.StrictMode>
 
   <Header/>
+  <Display/>
   <Footer/>
 
   </React.StrictMode>

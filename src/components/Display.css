@@ -1,0 +1,51 @@
+.cont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cont-temp {
+    display: flex;
+    flex-direction: row;
+    gap: 10px
+}
+
+.cont-infos {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+}
+
+.cont-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    color: rgb(0, 153, 255);
+}
+
+.image {
+    width: 150px;
+    margin-top: -250px;
+}
+
+.temp-text {
+    font-size: 40px;
+    font-weight: 900;
+    color: aliceblue;
+}
+
+.desc-text {
+    font-size: 30px;
+    font-weight: 300;
+    margin-top: -40px;
+    color: aliceblue;
+}
+
+.info-text {
+    font-size: 20px;
+    font-weight: 900;
+    color: aliceblue;
+}

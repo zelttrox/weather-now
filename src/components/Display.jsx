@@ -2,24 +2,23 @@ import "./Display.css"
 
 function Display() {
   return (
-    <>
-    <img class="disp-image"> </img>
-    <div class="disp-cont">
-        <p class="disp-temp"> 0°C </p>
-        <button class="disp-btn"> F° </button>
-    </div>
-    <p class="disp-desc"> climate </p>
-    <div>
-        <div>
-            <img> </img>
-            <p> </p>
+    <div class="cont">
+      <img class="image" src="./images/sunny.png"/>
+      <div class="cont-temp">
+        <p class="temp-text"> 0°C </p>
+      </div>
+      <p class="desc-text"> Sunny </p>
+      <div class="cont-infos">
+        <div class="cont-info">
+        <i class="fa-solid fa-droplet"></i>
+          <p class="info-text"> 0% </p>
         </div>
-        <div>
-            <img> </img>
-            <p> </p>
+        <div class="cont-info">
+        <i class="fa-solid fa-wind"></i>
+          <p class="info-text"> 0m/s </p>
         </div>
+      </div>
     </div>
-    </>
   )
 }
 
