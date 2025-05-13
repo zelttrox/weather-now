@@ -1,0 +1,16 @@
+.cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+    margin-bottom: -50px;
+}
+
+.city-input {
+    background-color: rgb(42, 60, 87);
+    color: aliceblue;
+    border-color: aliceblue;
+    border-style: double;
+    border-radius: 2%;
+}
