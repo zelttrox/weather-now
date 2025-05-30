@@ -1,5 +1,3 @@
-import GetWeather from "./service.js";
-
 // Return a meteo format using given weather data
 async function ConvertData(data) {
 

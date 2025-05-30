@@ -2,17 +2,32 @@ import "./Display.css"
 import GetWeather from "../api/service.js"
 import ConvertData from "../api/conv.js"
 
+import { useState, useEffect } from "react"
+
 function Display() {
 
+  // Hooks
+  const [data, setData] = useState(null)
+  const [loading, setLoading] = useState(true)
+
+  // Get and convert API data
   async function ImportData() {
-    const response = await GetWeather()
-    console.log(response)
-    const data = await ConvertData(response)
-    return data
+    try {
+      const response = await GetWeather()
+      const meteo = await ConvertData(response)
+      setData(meteo)
+    }
+    catch (error) {console.log(error)}
+    finally {setLoading(false)}
   }
 
-  const data = ImportData()
-  console.log(data)
+  // Async fetching operation
+  useEffect( () => {ImportData()}, [])
+
+  // Loading logic
+  if (loading) return <p class="temp-text">Loading...</p>
+
+  if (!data) return <p class="temp-text">Could not fetch data.</p>
 
   return (
     <div class="cont">
@@ -28,7 +43,7 @@ function Display() {
         </div>
         <div class="cont-info">
         <i class="fa-solid fa-wind"></i>
-          <p class="info-text"> 0m/s </p>
+          <p class="info-text"> {`${data.wind}m/s`} </p>
         </div>
       </div>
     </div>
