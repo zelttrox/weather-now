@@ -1,21 +1,18 @@
 import "./Display.css"
-import "./service.js"
-import GetWeather from "./service.js"
+import GetWeather from "../api/service.js"
+import ConvertData from "../api/conv.js"
 
 function Display() {
 
-  var data = {
-    temperature: 14,
-    description: "Sunny",
-    humidity: 80,
-    windSpeed: 8.5
-  }
-
-  async function Response() {
+  async function ImportData() {
     const response = await GetWeather()
     console.log(response)
+    const data = await ConvertData(response)
+    return data
   }
-  Response()
+
+  const data = ImportData()
+  console.log(data)
 
   return (
     <div class="cont">

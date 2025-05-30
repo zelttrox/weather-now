@@ -20,13 +20,4 @@ async function GetWeather() {
     }
 }
 
-const data = await GetWeather()
-// for (let i = 0; i < data.hourly.time.length; i++) {
-//   const time = data.hourly.time[i];
-//   const temp = data.hourly.temperature_2m[i];
-//   console.log(`Time: ${time}  Temp: ${temp}°C`)
-// }
-var current_time = new Date()
-console.log(current_time.toISOString().slice(0, 14)+"00")
-
 export default GetWeather
