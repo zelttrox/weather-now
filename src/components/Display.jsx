@@ -1,4 +1,6 @@
 import "./Display.css"
+import "./service.js"
+import GetWeather from "./service.js"
 
 function Display() {
 
@@ -8,6 +10,12 @@ function Display() {
     humidity: 80,
     windSpeed: 8.5
   }
+
+  async function Response() {
+    const response = await GetWeather()
+    console.log(response)
+  }
+  Response()
 
   return (
     <div class="cont">

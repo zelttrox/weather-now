@@ -1,0 +1,32 @@
+const api_url = "https://api.open-meteo.com/v1/forecast"
+
+const api_params = {
+	"latitude": 43.596546,
+	"longitude": 3.9237431,
+	"hourly": "temperature_2m,relative_humidity_2m,wind_speed_10m"
+}
+
+const url = (base_url, params) =>
+    base_url + "?" + Object.entries(params).map(([k, v]) => `${k}=${v}`).join("&")
+
+
+async function GetWeather() {
+    try {
+        const response = await fetch(url(api_url, api_params))
+        return response.json()
+    }
+    catch (error) {
+        console.error(`Error while fetching`)
+    }
+}
+
+const data = await GetWeather()
+// for (let i = 0; i < data.hourly.time.length; i++) {
+//   const time = data.hourly.time[i];
+//   const temp = data.hourly.temperature_2m[i];
+//   console.log(`Time: ${time}  Temp: ${temp}°C`)
+// }
+var current_time = new Date()
+console.log(current_time.toISOString().slice(0, 14)+"00")
+
+export default GetWeather
