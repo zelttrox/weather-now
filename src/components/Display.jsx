@@ -26,12 +26,12 @@ function Display() {
 
   // Loading logic
   if (loading) return <p class="temp-text">Loading...</p>
-
   if (!data) return <p class="temp-text">Could not fetch data.</p>
 
+  // Component
   return (
     <div class="cont">
-      <img class="image" src="./images/sunny.png"/>
+      <img class="image" src="./images/sunny.png" alt="weather state"/>
       <div class="cont-temp">
         <p class="temp-text"> {`${data.temperature}°C`} </p>
       </div>
