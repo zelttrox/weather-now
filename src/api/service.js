@@ -3,7 +3,7 @@ const api_url = "https://api.open-meteo.com/v1/forecast"
 const api_params = {
 	"latitude": 43.596546,
 	"longitude": 3.9237431,
-	"hourly": "temperature_2m,relative_humidity_2m,wind_speed_10m"
+	"current": "temperature_2m,relative_humidity_2m,wind_speed_10m,precipitation,cloud_cover"
 }
 
 const url = (base_url, params) =>
