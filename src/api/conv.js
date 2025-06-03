@@ -4,7 +4,7 @@ async function ConvertData(data) {
     // Initialize the meteo format
     var meteo = {
         temperature: undefined,
-        description: undefined,
+        description: "none",
         humidity: undefined,
         wind: undefined,
         precipitation: undefined,
